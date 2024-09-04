@@ -1,0 +1,26 @@
+{
+	"name": "${localWorkspaceFolderBasename}",
+	"build": {
+		"args": {
+			"USER_NAME": "dev",
+			"UID": "2000",
+			"NODE_VERSION": "22.7.0",
+			"PNPM_VERSION": "9.9.0"
+		},
+		"dockerfile": "./Dockerfile",
+		"context": ".."
+	},
+	"runArgs": [
+		"--hostname",
+		"${localWorkspaceFolderBasename}",
+		"--network",
+		"host",
+		"--name",
+		"${localWorkspaceFolderBasename}"
+	],
+	"workspaceFolder": "/home/dev/workspace",
+	"workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
+	"mounts": [
+		"source=${localWorkspaceFolderBasename}_node_modules,target=${containerWorkspaceFolder}/node_modules,type=volume"
+	]
+}
