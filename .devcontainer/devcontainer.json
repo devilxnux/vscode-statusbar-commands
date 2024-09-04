@@ -18,6 +18,14 @@
 		"--name",
 		"${localWorkspaceFolderBasename}"
 	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Exelord.git-commits",
+				"mhutchie.git-graph"
+			]
+		}
+	},
 	"workspaceFolder": "/home/dev/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind",
 	"mounts": [
