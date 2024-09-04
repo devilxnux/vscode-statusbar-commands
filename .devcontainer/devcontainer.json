@@ -22,7 +22,8 @@
 		"vscode": {
 			"extensions": [
 				"Exelord.git-commits",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"kentayamada.vscode-statusbar-commands"
 			]
 		}
 	},
