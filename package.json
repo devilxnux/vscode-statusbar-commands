@@ -1,0 +1,98 @@
+{
+  "name": "vscode-statusbar-commands",
+  "displayName": "VSCode Statusbar Commands",
+  "version": "1.0.0",
+  "description": "This VSCode extension allows you to customize your VSCode status bar by adding quick-access commands with user-defined icons and tooltips. Easily configure and manage commands to streamline your workflow, all directly from your status bar.",
+  "main": "./dist/extension.js",
+  "author": {
+    "name": "Kenta Yamada"
+  },
+  "markdown": "github",
+  "publisher": "kentayamada",
+  "license": "SEE LICENSE IN LICENSE",
+  "pricing": "Free",
+  "homepage": "https://github.com/kentayamada-dev/vscode-statusbar-commands/blob/main/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kentayamada-dev/vscode-statusbar-commands.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kentayamada-dev/vscode-statusbar-commands/issues"
+  },
+  "icon": "./assets/icon.png",
+  "galleryBanner": {
+    "color": "#FFFFFF",
+    "theme": "light"
+  },
+  "keywords": [
+    "statusbar",
+    "commands",
+    "shortcut",
+    "customization",
+    "workflow"
+  ],
+  "engines": {
+    "vscode": "^1.71.0",
+    "pnpm": "9.9.0",
+    "node": "22.7.0",
+    "npm": "please-use-pnpm"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "contributes": {
+    "commands": [],
+    "configuration": {
+      "properties": {
+        "statusbarCommands.commands": {
+          "description": "List of commands to add to the status bar.",
+          "items": {
+            "properties": {
+              "command": {
+                "description": "Command ID of the VS Code command to run.",
+                "type": "string"
+              },
+              "icon": {
+                "description": "The icon to display in the status bar item (e.g., 'light-bulb', 'thumbsup', 'zap'). Use the following icon set.\nhttps://code.visualstudio.com/api/references/icons-in-labels#icon-listing",
+                "type": "string"
+              },
+              "name": {
+                "description": "The name of the command, shown as a tooltip when hovering over the status bar icon.",
+                "type": "string"
+              }
+            },
+            "required": [
+              "icon",
+              "command"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "statusbarCommands.showErrorWhenNoCommands": {
+          "default": true,
+          "description": "Show an error message when no commands are defined.",
+          "type": "boolean"
+        }
+      },
+      "title": "VSCode Statusbar Commands"
+    }
+  },
+  "scripts": {
+    "compile": "pnpm run check-types && node esbuild.js",
+    "check-types": "tsc --noEmit",
+    "package": "npm run check-types && node esbuild.js --production",
+    "vscode:prepublish": "pnpm run package",
+    "vsce-publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "22.5.2",
+    "@types/vscode": "1.71.0",
+    "@vscode/vsce": "3.0.0",
+    "esbuild": "0.23.1",
+    "typescript": "5.5.4"
+  }
+}
