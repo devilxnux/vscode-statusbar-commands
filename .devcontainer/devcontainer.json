@@ -20,10 +20,14 @@
 	],
 	"customizations": {
 		"vscode": {
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			},
 			"extensions": [
 				"Exelord.git-commits",
 				"mhutchie.git-graph",
-				"kentayamada.vscode-statusbar-commands"
+				"kentayamada.vscode-statusbar-commands",
+				"esbenp.prettier-vscode"
 			]
 		}
 	},
