@@ -1,7 +1,7 @@
 {
   "name": "vscode-statusbar-commands",
   "displayName": "VSCode Statusbar Commands",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "This VSCode extension allows you to customize your VSCode status bar by adding quick-access commands with user-defined icons and tooltips. Easily configure and manage commands to streamline your workflow, all directly from your status bar.",
   "main": "./dist/extension.js",
   "author": {
@@ -48,19 +48,23 @@
     "configuration": {
       "properties": {
         "statusbarCommands.commands": {
-          "description": "List of commands to add to the status bar.",
+          "markdownDescription": "List of commands to add to the status bar.",
           "items": {
             "properties": {
               "command": {
-                "description": "Command ID of the VS Code command to run.",
+                "markdownDescription": "Command ID of the VS Code command to run.",
                 "type": "string"
               },
               "icon": {
-                "description": "The icon to display in the status bar item (e.g., 'light-bulb', 'thumbsup', 'zap'). Use the following icon set.\nhttps://code.visualstudio.com/api/references/icons-in-labels#icon-listing",
+                "markdownDescription": "The icon to display in the status bar item (e.g., `light-bulb`, `thumbsup`, `zap`). Use the [icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
                 "type": "string"
               },
               "name": {
-                "description": "The name of the command, shown as a tooltip when hovering over the status bar icon.",
+                "markdownDescription": "The name of the command, shown as a tooltip when hovering over the status bar icon.",
+                "type": "string"
+              },
+              "color": {
+                "markdownDescription": "The color of the status bar icon (e.g., `#ff0000`, `red`). Accepts any valid CSS color value.",
                 "type": "string"
               }
             },
@@ -74,7 +78,7 @@
         },
         "statusbarCommands.showErrorWhenNoCommands": {
           "default": true,
-          "description": "Show an error message when no commands are defined.",
+          "markdownDescription": "Show an error message when no commands are defined.",
           "type": "boolean"
         }
       },

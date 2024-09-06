@@ -1,6 +1,17 @@
 # Changelog
-## [1.0.0] - 2024-09-04
+
+## [1.1.0] - 2024-09-06
+
 ### Added
+
+- Ability to customize the color of icons in the status bar using the `color` property in the `statusbarCommands.commands` configuration.
+  - Users can now define a color for each command icon (e.g., `#ff0000`, `red`). Accepts any valid CSS color value.
+- Improved configuration flexibility to further personalize the look and feel of status bar items.
+
+## [1.0.0] - 2024-09-04
+
+### Added
+
 - Initial release of the VSCode Statusbar Commands extension.
 - Added ability to define custom commands that appear in the status bar using the `statusbarCommands.commands` configuration.
 - Displayed icons for commands in the status bar based on user-defined settings.
