@@ -1,5 +1,12 @@
 ### Changelog
 
+## [2.0.1] - 2024-09-07
+
+### Changed
+
+- **Documentation Update**: Updated the README file to reflect the latest features and usage instructions. The new documentation includes details on the `statusBarText`, `tooltipText`, and command alignment settings.
+  - No functional changes have been made to the extension.
+
 ## [2.0.0] - 2024-09-07
 
 ### Breaking Changes
@@ -51,3 +58,7 @@
 - **Auto-reinitialize**: Automatically re-initializes status bar commands when configuration changes are detected.
 - **Error Handling**: Configurable option (`statusbarCommands.showErrorWhenNoCommands`) to display an error message if no commands are defined.
 - **User Prompt**: Provides a prompt for users to configure commands or disable error messages directly from the error dialog.
+
+---
+
+This change log now accurately reflects your version `2.0.1` update, which is a non-functional update focused on documentation.
