@@ -1,4 +1,21 @@
-# Changelog
+### Changelog
+
+## [2.0.0] - 2024-09-07
+
+### Breaking Changes
+
+- **Renamed Configuration Properties**:
+  - `text` is now `statusBarText`. This property defines the text displayed in the status bar, and users can continue using the `$(star)` format to display icons (pictograms) from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
+  - `tooltip` is now `tooltipText`. This property defines the text shown when hovering over the status bar item.
+  - **Important**: Users must update their configuration in `settings.json` to reflect these new property names.
+
+### Removed
+
+- **Removed `icon` and `name` Properties**: The `statusBarText` now serves as the primary visual element in the status bar, and tooltips are defined using `tooltipText`. Users should update their configurations to rely on these properties.
+
+### Added
+
+- **Pictogram Usage**: Users can now use the `$(star)` format for adding pictograms directly in the `statusBarText` field. This allows for better customization of status bar icons using the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
 
 ## [1.2.0] - 2024-09-06
 

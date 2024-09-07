@@ -11,10 +11,10 @@ export function activate(context: vscode.ExtensionContext) {
 
     const commands = vscode.workspace.getConfiguration('statusbarCommands').get<
       {
-        icon: string;
+        statusBarText: string;
         command: string;
-        name: string | undefined;
-        color: string | undefined;
+        tooltipText: string;
+        color: string;
       }[]
     >('commands', []);
     const showError = vscode.workspace
@@ -24,9 +24,9 @@ export function activate(context: vscode.ExtensionContext) {
     if (commands && commands.length > 0) {
       commands.forEach((cmd, index) => {
         const statusBarItem = vscode.window.createStatusBarItem(statusBarAlignment);
-        statusBarItem.text = `$(${cmd.icon})`;
+        statusBarItem.text = cmd.statusBarText;
         statusBarItem.command = `statusbar-commands.runUserCommand${index}`;
-        statusBarItem.tooltip = cmd.name || '';
+        statusBarItem.tooltip = cmd.tooltipText;
 
         if (cmd.color) {
           statusBarItem.color = cmd.color;

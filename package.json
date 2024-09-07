@@ -1,7 +1,7 @@
 {
   "name": "vscode-statusbar-commands",
   "displayName": "VSCode Statusbar Commands",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "This VSCode extension allows you to customize your VSCode status bar by adding quick-access commands with user-defined icons and tooltips. Easily configure and manage commands to streamline your workflow, all directly from your status bar.",
   "main": "./dist/extension.js",
   "author": {
@@ -40,7 +40,6 @@
     "Other"
   ],
   "contributes": {
-    "commands": [],
     "configuration": {
       "properties": {
         "statusbarCommands.commands": {
@@ -51,21 +50,21 @@
                 "markdownDescription": "Command ID of the VS Code command to run.",
                 "type": "string"
               },
-              "icon": {
-                "markdownDescription": "The icon to display in the status bar item (e.g., `light-bulb`, `thumbsup`, `zap`). Use the [icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
+              "statusBarText": {
+                "markdownDescription": "The text to display in the status bar. Use the `$(star)` format to display icons from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
                 "type": "string"
               },
-              "name": {
-                "markdownDescription": "The name of the command, shown as a tooltip when hovering over the status bar icon.",
+              "tooltipText": {
+                "markdownDescription": "The text to display as a tooltip when hovering over the status bar item.",
                 "type": "string"
               },
               "color": {
-                "markdownDescription": "The color of the status bar icon (e.g., `#ff0000`, `red`). Accepts any valid CSS color value.",
+                "markdownDescription": "The color of the status bar text (e.g., `#ff0000`, `red`). Accepts any valid CSS color value.",
                 "type": "string"
               }
             },
             "required": [
-              "icon",
+              "statusBarText",
               "command"
             ],
             "type": "object"
