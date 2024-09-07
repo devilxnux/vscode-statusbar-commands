@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0] - 2024-09-06
+
+### Added
+
+- **Configurable Status Bar Alignment**: Users can now choose whether the status bar commands align to the left or right using the new `statusbarCommands.alignment` configuration.
+  - Supports `"Left"` or `"Right"` values for alignment.
+  - Enhances the flexibility of status bar item placement based on user preference.
+
 ## [1.1.1] - 2024-09-06
 
 ### Changed

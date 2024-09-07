@@ -1,7 +1,7 @@
 {
   "name": "vscode-statusbar-commands",
   "displayName": "VSCode Statusbar Commands",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "description": "This VSCode extension allows you to customize your VSCode status bar by adding quick-access commands with user-defined icons and tooltips. Easily configure and manage commands to streamline your workflow, all directly from your status bar.",
   "main": "./dist/extension.js",
   "author": {
@@ -20,10 +20,6 @@
     "url": "https://github.com/kentayamada-dev/vscode-statusbar-commands/issues"
   },
   "icon": "./assets/icon.png",
-  "galleryBanner": {
-    "color": "#FFFFFF",
-    "theme": "light"
-  },
   "keywords": [
     "statusbar",
     "commands",
@@ -75,6 +71,15 @@
             "type": "object"
           },
           "type": "array"
+        },
+        "statusbarCommands.alignment": {
+          "type": "string",
+          "default": "Right",
+          "enum": [
+            "Left",
+            "Right"
+          ],
+          "markdownDescription": "Controls the alignment of status bar commands (Left or Right)."
         },
         "statusbarCommands.showErrorWhenNoCommands": {
           "default": true,

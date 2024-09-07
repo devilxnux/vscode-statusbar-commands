@@ -4,6 +4,11 @@ export function activate(context: vscode.ExtensionContext) {
   const initializeStatusBarCommands = () => {
     context.subscriptions.forEach((subscription) => subscription.dispose());
 
+    const alignmentSetting = vscode.workspace.getConfiguration('statusbarCommands').get<string>('alignment', 'Right');
+
+    const statusBarAlignment =
+      alignmentSetting === 'Left' ? vscode.StatusBarAlignment.Left : vscode.StatusBarAlignment.Right;
+
     const commands = vscode.workspace.getConfiguration('statusbarCommands').get<
       {
         icon: string;
@@ -18,7 +23,7 @@ export function activate(context: vscode.ExtensionContext) {
 
     if (commands && commands.length > 0) {
       commands.forEach((cmd, index) => {
-        let statusBarItem = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100 - index);
+        const statusBarItem = vscode.window.createStatusBarItem(statusBarAlignment);
         statusBarItem.text = `$(${cmd.icon})`;
         statusBarItem.command = `statusbar-commands.runUserCommand${index}`;
         statusBarItem.tooltip = cmd.name || '';
@@ -29,7 +34,7 @@ export function activate(context: vscode.ExtensionContext) {
 
         statusBarItem.show();
 
-        let disposable = vscode.commands.registerCommand(`statusbar-commands.runUserCommand${index}`, async () => {
+        const disposable = vscode.commands.registerCommand(`statusbar-commands.runUserCommand${index}`, async () => {
           await vscode.commands.executeCommand(cmd.command);
         });
 
@@ -59,7 +64,8 @@ export function activate(context: vscode.ExtensionContext) {
   vscode.workspace.onDidChangeConfiguration((event) => {
     if (
       event.affectsConfiguration('statusbarCommands.commands') ||
-      event.affectsConfiguration('statusbarCommands.showErrorWhenNoCommands')
+      event.affectsConfiguration('statusbarCommands.showErrorWhenNoCommands') ||
+      event.affectsConfiguration('statusbarCommands.alignment')
     ) {
       if (configChangeTimeout) {
         clearTimeout(configChangeTimeout);
