@@ -4,11 +4,11 @@ This VSCode extension allows you to add custom commands to the status bar for qu
 
 ## Features
 
-- Add custom commands to the status bar with user-defined text and icons from the VS Code icon set.
+- Add custom commands to the status bar with user-defined text and icons.
 - Customize the color of status bar items for better visual distinction.
 - Hover tooltips display the name and description of the command.
 - Automatically refreshes status bar items when configuration changes occur.
-- Option to show an error message when no commands are configured, with a prompt to configure them directly from the VSCode settings.
+- Option to show an error message when no commands are configured, with a prompt to configure them directly from the settings.
 - Easily align commands to the left or right of the status bar with a configurable setting.
 
 ### Demo
@@ -24,8 +24,8 @@ This extension does not have any additional dependencies. It requires Visual Stu
 This extension contributes the following settings:
 
 - `statusbarCommands.commands`: An array of objects representing commands to add to the status bar. Each command includes:
-  - `statusBarText`: The text or icon to display in the status bar item (e.g., `$(zap)` for an icon).
-    The icon format follows [this list](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
+
+  - `statusBarText`: The text displayed in the status bar, and users can using the `$(star)` syntax to display icons from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
   - `command`: The ID of the VSCode command to run when the status bar item is clicked.
   - `tooltipText`: (Optional) The text to display as a tooltip when hovering over the status bar item.
   - `color`: (Optional) The color of the status bar item text (e.g., `#ff0000`, `red`). Accepts any valid CSS color value.

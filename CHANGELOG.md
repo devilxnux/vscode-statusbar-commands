@@ -12,7 +12,7 @@
 ### Breaking Changes
 
 - **Renamed Configuration Properties**:
-  - `text` is now `statusBarText`. This property defines the text displayed in the status bar, and users can continue using the `$(star)` format to display icons (pictograms) from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
+  - `text` is now `statusBarText`. This property defines the text displayed in the status bar, and users can continue using the `$(star)` syntax to display icons (pictograms) from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).
   - `tooltip` is now `tooltipText`. This property defines the text shown when hovering over the status bar item.
   - **Important**: Users must update their configuration in `settings.json` to reflect these new property names.
 

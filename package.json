@@ -51,7 +51,7 @@
                 "type": "string"
               },
               "statusBarText": {
-                "markdownDescription": "The text to display in the status bar. Use the `$(star)` format to display icons from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
+                "markdownDescription": "The text to display in the status bar. Use the `$(<name>)` syntax to display icons from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
                 "type": "string"
               },
               "tooltipText": {
@@ -78,7 +78,7 @@
             "Left",
             "Right"
           ],
-          "markdownDescription": "Controls the alignment of status bar commands (Left or Right)."
+          "markdownDescription": "Controls the alignment of status bar commands `Left` or `Right`."
         },
         "statusbarCommands.showErrorWhenNoCommands": {
           "default": true,
