@@ -1,5 +1,12 @@
 ### Changelog
 
+## [2.0.2] - 2024-09-09
+
+### Changed
+
+- **Performance and Stability Improvements**: Made improvements to how status bar commands are managed and reinitialized, ensuring better performance and a more reliable experience when updating settings.
+- **Refinements in Configuration Handling**: The extension now responds more efficiently to configuration changes, ensuring that commands are updated correctly without unnecessary reinitialization.
+
 ## [2.0.1] - 2024-09-07
 
 ### Changed
