@@ -1,4 +1,4 @@
-import * as vscode from 'vscode';
+import vscode from 'vscode';
 
 type Command = { statusBarText: string; command: string; tooltipText: string; color: string };
 type Alignment = 'Left' | 'Right';

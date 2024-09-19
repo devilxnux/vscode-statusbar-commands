@@ -1,7 +1,7 @@
 {
   "name": "vscode-statusbar-commands",
   "displayName": "VSCode Statusbar Commands",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "This VSCode extension allows you to customize your VSCode status bar by adding quick-access commands with user-defined icons and tooltips. Easily configure and manage commands to streamline your workflow, all directly from your status bar.",
   "main": "./dist/extension.js",
   "author": {
@@ -94,13 +94,15 @@
     "check-types": "tsc --noEmit",
     "package": "pnpm check-types && node esbuild.js --production",
     "vscode:prepublish": "pnpm package",
-    "vsce-publish": "vsce publish"
+    "vsce-publish": "vsce publish",
+    "prettier": "prettier . --write --cache --cache-strategy metadata"
   },
   "devDependencies": {
     "@types/node": "22.5.2",
     "@types/vscode": "1.71.0",
     "@vscode/vsce": "3.0.0",
     "esbuild": "0.23.1",
+    "prettier": "3.3.3",
     "typescript": "5.5.4"
   }
 }

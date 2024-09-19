@@ -1,5 +1,12 @@
 ### Changelog
 
+## [2.0.3] - 2024-09-19
+
+### Improved
+
+- **Faster and Smaller Extension**: We’ve optimized how the extension is built, making it faster to load and reducing its overall size.
+- **Enhanced Reliability**: The way the extension handles commands and updates has been improved, ensuring a smoother and more dependable experience.
+
 ## [2.0.2] - 2024-09-09
 
 ### Changed
