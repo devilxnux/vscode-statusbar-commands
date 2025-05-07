@@ -1,6 +1,6 @@
 import vscode from 'vscode';
 
-type Command = { statusBarText: string; command: string; tooltipText: string; color: string };
+type Command = { statusBarText: string; command: string; args: string[]; tooltipText: string; color: string };
 type Alignment = 'Left' | 'Right';
 
 export const activate = (context: vscode.ExtensionContext) => {
@@ -31,7 +31,7 @@ export const activate = (context: vscode.ExtensionContext) => {
 
   const registerCommand = (cmd: Command, index: number) => {
     return vscode.commands.registerCommand(`statusbar-commands.runUserCommand${index}`, async () => {
-      await vscode.commands.executeCommand(cmd.command);
+      await vscode.commands.executeCommand(cmd.command, ...(cmd.args ?? []));
     });
   };
 
