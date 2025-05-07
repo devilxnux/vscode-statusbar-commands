@@ -29,8 +29,8 @@
   ],
   "engines": {
     "vscode": "^1.71.0",
-    "pnpm": "9.9.0",
-    "node": "22.7.0",
+    "pnpm": ">=9.9.0",
+    "node": "^22.7.0",
     "npm": "please-use-pnpm"
   },
   "activationEvents": [
@@ -49,6 +49,13 @@
               "command": {
                 "markdownDescription": "Command ID of the VS Code command to run.",
                 "type": "string"
+              },
+              "args": {
+                "markdownDescription": "Command arguments, listed as array of strings.",
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "statusBarText": {
                 "markdownDescription": "The text to display in the status bar. Use the `$(<name>)` syntax to display icons from the [VS Code icon set](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing).",
@@ -95,14 +102,15 @@
     "package": "pnpm check-types && node esbuild.js --production",
     "vscode:prepublish": "pnpm package",
     "vsce-publish": "vsce publish",
+    "vsce-package": "vsce package -o dist/vscode-statusbar-commands.vsix",
     "prettier": "prettier . --write --cache --cache-strategy metadata"
   },
   "devDependencies": {
-    "@types/node": "22.5.2",
-    "@types/vscode": "1.71.0",
-    "@vscode/vsce": "3.0.0",
-    "esbuild": "0.23.1",
-    "prettier": "3.3.3",
-    "typescript": "5.5.4"
+    "@types/node": "^22.5.2",
+    "@types/vscode": "^1.71.0",
+    "@vscode/vsce": "^3.0.0",
+    "esbuild": "^0.23.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
   }
 }
